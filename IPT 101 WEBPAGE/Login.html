@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Log in Page</title>
   
  <style media="screen">
       *,
@@ -16,20 +17,6 @@ body {
   background: url("Images/web3.jpg") center/cover no-repeat fixed;
   overflow: hidden;
   font-weight: bold;
-}
-.background{
-    width: 430px;
-    height: 520px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-}
-.background .shape{
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    border-radius: 50%;
 }
 
 form {
@@ -72,7 +59,7 @@ form *{
 }
 form h3{
     font-size: 32px;
-    font-weight: 500px;
+    font-weight: 500;
     line-height: 42px;
     text-align: center;
 }
@@ -97,16 +84,20 @@ input{
 ::placeholder{
     color: white;
 }
-button{
-    margin-top: 50px;
-    width: 100%;
-    background-color: orange;
-    color: white;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 500px;
-    border-radius: 5px;
-    cursor: pointer;
+button {
+  margin-top: 50px;
+  width: 100%;
+  background-color: orange;
+  color: white;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkorange;
 }
 .social {
   margin-top: 30px;
@@ -134,52 +125,51 @@ button{
 
 .social .fb {
   background-image: url("Images/facebook.png");
-  background-position: left center;   
+  background-position:center;   
 }
 
 .social .go {
   background-image: url("Images/google.png");
-  background-position: right center;  
+  background-position:right;  
 
 }
-
-    </style>
+.social .in {
+  background-image: url("Images/instagram.png");
+}
+</style>
 </head>
 <body>
-    <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
+  <form onsubmit="return false;"> <!-- prevent form from submitting -->
+    <h3>Login Here</h3>
+
+    <label for="username">Username</label>
+    <input type="text" placeholder="Email or Phone" id="username">
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password" id="password">
+    <span onclick="togglePassword()" style="cursor:pointer;">👁️</span>
+
+    <!-- Fixed button -->
+    <button class="login-button" onclick="goToMainpage()">Log In</button>
+
+    <div class="social">
+      <div class="go"><i class="fab fa-google"></i></div>
+      <div class="fb"><i class="fab fa-facebook"></i></div>
+      <div class="in"><i class="fab fa-instagram"></i></div>
+      <a href="signup.html" class="create-account-link">Create Account</a>
     </div>
-    <form>
-        <h3>"Login Here"</h3>
-
-        <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
-
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
-        <span onclick="togglePassword()" style="cursor:pointer;">👁️</span>
-
-
-
-        <button>Log In</button>
-        <div class="social">
-          <div class="go"><i class="fab fa-google"></i></div>
-          <div class="fb"><i class="fab fa-facebook"></i></div>
-           <a href="create-account.html" class="create-account-link">Create Account</a>
-
-
-        </div>
-        
-    </form>
+  </form>
 </body>
-</html>
+
 <script>
-  function togglePassword() {
-    const passwordField = document.getElementById("password");
-    passwordField.type = passwordField.type === "password" ? "text" : "password";
-  }
+function togglePassword() {
+  const passwordField = document.getElementById("password");
+  passwordField.type = passwordField.type === "password" ? "text" : "password";
+}
+
+// Redirect to main page when Log In is clicked
+function goToMainpage() {
+  window.location.href = 'mainpage.html'; 
+}
 </script>
-
-
   

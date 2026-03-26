@@ -14,7 +14,7 @@ body {
   left: 50%;
   transform: translateX(-50%) scale(0.8);
   width: 450px;
-  height: 450px;
+  height: 500px;
   background: url("Images/web4.png") no-repeat center/contain;
   animation: popUp 2s ease-out forwards;
 }
@@ -45,7 +45,7 @@ body {
  }
   .bottom-part {
   position: absolute;
-  bottom: 170px;   
+  bottom: 200px;   
   left: 55%;      
   transform: translateX(-50%);
   font-size: 80px;
@@ -63,7 +63,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
   position: absolute;   
-  bottom: 50px;         
+  bottom: 100px;         
   transform: translateX(-50%); 
   left: 45%;
   font-family: 'Times New Roman', Times, serif;

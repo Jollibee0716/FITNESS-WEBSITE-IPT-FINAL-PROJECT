@@ -100,24 +100,6 @@
         transform: translateY(0);
       }
     }
-
-    .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background: rgba(255,255,255,0.2);
-      z-index: 1000;
-    }
-
-    .progress-fill {
-      height: 90%;
-      width: 0%; /* start empty */
-      background: darkorange;
-      transition: width 0.5s ease; /* smooth fill */
-    }
-
     #section4 {
       height: 100vh;
       background: url('Images/gym-bg.jpg') center/cover no-repeat;
@@ -137,18 +119,21 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+     
       
     }
 
     .menu button {
-      background: orange;
+      background: rgb(191, 109, 10);
       border: none;
-      padding: 10px;
+      padding: 20px;
       color: white;
       border-radius: 20px;
       cursor: pointer;
       text-align: center;
+      font-size: 15px;
       transition: 0.2s;
+      
     }
 
     .menu button:hover {
@@ -201,13 +186,10 @@
 
 <body>
 
-<div class="progress-bar">
-  <div class="progress-fill" id="progressFill"></div>
-</div>
 
 <section id="section1">
   <div class="section-caption">
-    What is your Gender?
+  Select your Gender
   </div>
   <div class="options">
     <div class="option-wrapper">
@@ -222,7 +204,7 @@
 </section>
 
 <section id="section2">
-  <div class="section-caption">What is your primary objective for this exercise?</div>
+  <div class="section-caption">Select your objective for this exercise</div>
   <div class="options">
     <div class="option-wrapper">
       <img src="Images/web8.png" class="option" onclick="next('section4')">
@@ -240,29 +222,29 @@
 </section>
 
 <section id="section3">
-  <div class="section-caption">What is your primary objective for this exercise?</div>
+  <div class="section-caption">Select your objective for this exercise</div>
   <div class="options">
     <div class="option-wrapper">
-      <img src="Images/web15.png" class="option" onclick="next('section4')">
+      <img src="Images/web15.png" class="option" onclick="next('section7')">
       <div class="caption">Lose weight</div>
     </div>
     <div class="option-wrapper">
-      <img src="Images/web16.png" class="option" onclick="next('section4')">
+      <img src="Images/web16.png" class="option" onclick="next('section8')">
       <div class="caption">Gain Muscle</div>
     </div>
     <div class="option-wrapper">
-      <img src="Images/web17.png" class="option" onclick="next('section4')">
+      <img src="Images/web17.png" class="option" onclick="next('section9')">
       <div class="caption">Maintain Fitness</div>
     </div>
   </div>
 </section>
 
 <section id="section4">
-  <div class="section-caption">What is your primary objective for this exercise?</div>
+  <div class="section-caption">Select your Target Muscle</div>
    <div class="content">
      
       <div class="menu">
-        <button data-target="fullbody" onclick="next('section5')">Fullbody</button>
+        <button data-target="fullbody" onclick="next('section5')">Full body</button>
         <button data-target="chest" onclick="next('section5')">Chest</button>
         <button data-target="abs" onclick="next('section5')">Abs</button>
         <button data-target="bicep" onclick="next('section5')">Bicep</button>
@@ -291,63 +273,224 @@
 </section>
 
 <section id="section5">
-  <div class="section-caption">Section 5</div>
-  <div class="options">
-    <div class="option-wrapper">
-      <img src="https://via.placeholder.com/150" class="option" onclick="next('section6')">
-      <div class="caption">Option C</div>
-    </div>
-    <div class="option-wrapper">
-      <img src="https://via.placeholder.com/150" class="option" onclick="next('section6')">
-      <div class="caption">Option D</div>
+  <div class="section-caption">Select your Target Muscle</div>
+   <div class="content">
+     
+      <div class="menu">
+        <button data-target="fullbody" onclick="next('section5')">Full body</button>
+        <button data-target="chest" onclick="next('section5')">Chest</button>
+        <button data-target="abs" onclick="next('section5')">Abs</button>
+        <button data-target="bicep" onclick="next('section5')">Bicep</button>
+        <button data-target="tricep" onclick="next('section5')">Tricep</button>
+        <button data-target="shoulders" onclick="next('section5')">Shoulders</button>
+        <button data-target="back" onclick="next('section5')">Back and Traps</button>
+        <button data-target="butt" onclick="next('section5')">Butt</button>
+        <button data-target="legs" onclick="next('section5')">Legs</button>
+      </div>
+
+      <!-- BODY DIAGRAM (images appear here on hover) -->
+      <div class="body">
+        <img src="Images/body.png" alt="Body Map" id="bodyImage">
+        <img src="Images/fullbody.png" class="highlight fullbody">
+         <img src="Images/chest.png" class="highlight chest">
+        <img src="Images/abs.png" class="highlight abs">
+        <img src="Images/bicep.png" class="highlight bicep">
+        <img src="Images/tricep.png" class="highlight tricep">
+        <img src="Images/shoulders.png" class="highlight shoulders">
+        <img src="Images/back.png" class="highlight back">
+        <img src="Images/butt.png" class="highlight butt">
+        <img src="Images/legs.png" class="highlight legs">
+      </div>
     </div>
   </div>
 </section>
 
 <section id="section6">
-  <div class="section-caption">Section 6</div>
-  <div class="options">
-    <div class="option-wrapper">
-      <img src="https://via.placeholder.com/150" class="option" onclick="next('section6')">
-      <div class="caption">Option C</div>
-    </div>
-    <div class="option-wrapper">
-      <img src="https://via.placeholder.com/150" class="option" onclick="next('section6')">
-      <div class="caption">Option D</div>
+  <div class="section-caption">Select your Target Muscle</div>
+   <div class="content">
+     
+      <div class="menu">
+        <button data-target="fullbody">Full body</button>
+        <button data-target="chest" onclick="next('section5')">Chest</button>
+        <button data-target="abs" onclick="next('section5')">Abs</button>
+        <button data-target="bicep" onclick="next('section5')">Bicep</button>
+        <button data-target="tricep" onclick="next('section5')">Tricep</button>
+        <button data-target="shoulders" onclick="next('section5')">Shoulders</button>
+        <button data-target="back" onclick="next('section5')">Back and Traps</button>
+        <button data-target="butt" onclick="next('section5')">Butt</button>
+        <button data-target="legs" onclick="next('section5')">Legs</button>
+      </div>
+
+      <!-- BODY DIAGRAM (images appear here on hover) -->
+      <div class="body">
+        <img src="Images/body.png" alt="Body Map" id="bodyImage">
+        <img src="Images/fullbody.png" class="highlight fullbody">
+         <img src="Images/chest.png" class="highlight chest">
+        <img src="Images/abs.png" class="highlight abs">
+        <img src="Images/bicep.png" class="highlight bicep">
+        <img src="Images/tricep.png" class="highlight tricep">
+        <img src="Images/shoulders.png" class="highlight shoulders">
+        <img src="Images/back.png" class="highlight back">
+        <img src="Images/butt.png" class="highlight butt">
+        <img src="Images/legs.png" class="highlight legs">
+      </div>
     </div>
   </div>
 </section>
 
+<section id="section7">
+  <div class="section-caption">Select your Target Muscle</div>
+   <div class="content">
+     
+      <div class="menu">
+        <button data-target="fullbody">Full body</button>
+        <button data-target="chest" onclick="next('section5')">Chest</button>
+        <button data-target="abs" onclick="next('section5')">Abs</button>
+        <button data-target="bicep" onclick="next('section5')">Bicep</button>
+        <button data-target="tricep" onclick="next('section5')">Tricep</button>
+        <button data-target="shoulders" onclick="next('section5')">Shoulders</button>
+        <button data-target="back" onclick="next('section5')">Back and Traps</button>
+        <button data-target="butt" onclick="next('section5')">Butt</button>
+        <button data-target="legs" onclick="next('section5')">Legs</button>
+      </div>
+
+      <!-- BODY DIAGRAM (images appear here on hover) -->
+      <div class="body">
+        <img src="Images/BODY1.png" alt="Body Map" id="bodyImage">
+        <img src="Images/FULLBODY1.png" class="highlight fullbody">
+         <img src="Images/CHEST1.png" class="highlight chest">
+        <img src="Images/ABDOMEN1.png" class="highlight abs">
+        <img src="Images/BICEPS.png" class="highlight bicep">
+        <img src="Images/tricep.png" class="highlight tricep">
+        <img src="Images/SHOULDERS1.png" class="highlight shoulders">
+        <img src="Images/BACK1.png" class="highlight back">
+        <img src="Images/butt.png" class="highlight butt">
+        <img src="Images/LEGS1.png" class="highlight legs">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section8">
+  <div class="section-caption">Select your Target Muscle</div>
+   <div class="content">
+     
+      <div class="menu">
+        <button data-target="fullbody">Full body</button>
+        <button data-target="chest" onclick="next('section5')">Chest</button>
+        <button data-target="abs" onclick="next('section5')">Abs</button>
+        <button data-target="bicep" onclick="next('section5')">Bicep</button>
+        <button data-target="tricep" onclick="next('section5')">Tricep</button>
+        <button data-target="shoulders" onclick="next('section5')">Shoulders</button>
+        <button data-target="back" onclick="next('section5')">Back and Traps</button>
+        <button data-target="butt" onclick="next('section5')">Butt</button>
+        <button data-target="legs" onclick="next('section5')">Legs</button>
+      </div>
+
+      <!-- BODY DIAGRAM (images appear here on hover) -->
+      <div class="body">
+        <img src="Images/BODY1.png" alt="Body Map" id="bodyImage">
+        <img src="Images/FULLBODY1.png" class="highlight fullbody">
+         <img src="Images/CHEST1.png" class="highlight chest">
+        <img src="Images/ABDOMEN1.png" class="highlight abs">
+        <img src="Images/BICEPS.png" class="highlight bicep">
+        <img src="Images/tricep.png" class="highlight tricep">
+        <img src="Images/SHOULDERS1.png" class="highlight shoulders">
+        <img src="Images/BACK1.png" class="highlight back">
+        <img src="Images/butt.png" class="highlight butt">
+        <img src="Images/LEGS1.png" class="highlight legs">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section9">
+  <div class="section-caption">Select your Target Muscle</div>
+   <div class="content">
+     
+      <div class="menu">
+        <button data-target="fullbody">Full body</button>
+        <button data-target="chest" onclick="next('section5')">Chest</button>
+        <button data-target="abs" onclick="next('section5')">Abs</button>
+        <button data-target="bicep" onclick="next('section5')">Bicep</button>
+        <button data-target="tricep" onclick="next('section5')">Tricep</button>
+        <button data-target="shoulders" onclick="next('section5')">Shoulders</button>
+        <button data-target="back" onclick="next('section5')">Back and Traps</button>
+        <button data-target="butt" onclick="next('section5')">Butt</button>
+        <button data-target="legs" onclick="next('section5')">Legs</button>
+      </div>
+
+      <!-- BODY DIAGRAM (images appear here on hover) -->
+      <div class="body">
+        <img src="Images/BODY1.png" alt="Body Map" id="bodyImage">
+        <img src="Images/FULLBODY1.png" class="highlight fullbody">
+         <img src="Images/CHEST1.png" class="highlight chest">
+        <img src="Images/ABDOMEN1.png" class="highlight abs">
+        <img src="Images/BICEPS.png" class="highlight bicep">
+        <img src="Images/tricep.png" class="highlight tricep">
+        <img src="Images/SHOULDERS1.png" class="highlight shoulders">
+        <img src="Images/BACK1.png" class="highlight back">
+        <img src="Images/butt.png" class="highlight butt">
+        <img src="Images/LEGS1.png" class="highlight legs">
+      </div>
+    </div>
+  </div>
+</section>
 <script>
-  let currentStep = 0;
-  const totalSteps = 6; // change based on number of sections
+  // Define the order of sections
+  const sectionOrder = [
+    "section1", "section2", "section3", 
+    "section4", "section5", "section6", 
+    "section7", "section8", "section9"
+  ];
 
+  // Main next() function (now only handles scrolling)
   function next(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    if (!sectionOrder.includes(sectionId)) return;
 
-    currentStep++;
-    let progress = (currentStep / totalSteps) * 100;
-    document.getElementById("progressFill").style.width = progress + "%";
+    // Smooth scroll to the section
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
   }
 
-  
-  const buttons = document.querySelectorAll("#section4 .menu button");
-  const highlights = document.querySelectorAll("#section4 .highlight");
+  // Setup hover highlights for muscle selection sections
+  function setupSection(sectionId, nextSectionId) {
+    const section = document.querySelector(`#${sectionId}`);
+    if (!section) return;
 
-  buttons.forEach(btn => {
-    btn.addEventListener("mouseenter", () => {
-      const target = btn.getAttribute("data-target");
-      highlights.forEach(img => img.classList.remove("active"));
-      document.querySelector(`#section4 .${target}`).classList.add("active");
-    });
+    const buttons = section.querySelectorAll(".menu button");
+    const highlights = section.querySelectorAll(".highlight");
 
-    btn.addEventListener("mouseleave", () => {
-      highlights.forEach(img => img.classList.remove("active"));
-    });
+    const clearHighlights = () => {
+      highlights.forEach(el => el.classList.remove("active"));
+    };
 
-    btn.addEventListener("click", () => {
-      next('section5');
+    buttons.forEach(btn => {
+      btn.addEventListener("mouseenter", () => {
+        const target = btn.getAttribute("data-target");
+
+        clearHighlights();
+
+        const targetEl = section.querySelector(`.${target}`);
+        if (targetEl) {
+          targetEl.classList.add("active");
+        }
+      });
+
+      btn.addEventListener("mouseleave", clearHighlights);
+
+      btn.addEventListener("click", () => {
+        if (nextSectionId) {
+          next(nextSectionId);
+        }
+      });
     });
+  }
+
+  // Auto setup muscle selection sections
+  const muscleSections = ["section4", "section5", "section6", "section7", "section8", "section9"];
+  muscleSections.forEach((sec, i) => {
+    const nextSec = muscleSections[i + 1] || null;
+    setupSection(sec, nextSec);
   });
 </script>
 

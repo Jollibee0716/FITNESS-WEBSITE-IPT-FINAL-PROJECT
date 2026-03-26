@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="webpage.css">
+  <script src="webpage.script" defer></script>
+</head>
+
+
+<body>
+  <div class="homepage-container">
+    <div class="top-part">FIT</div>
+    <div class="bottom-part">NESS</div>
+    <div class="background-transition"></div>
+    <button class="my-button" onclick="window.location.href='Login.html'">Join Now<button>
+</div>
+
+</body>
+</html>
+<script>
+  document.querySelector(".my-button").addEventListener("click", function() {
+    window.location.href = "login.html";
+  });
+
+</script>
