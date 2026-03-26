@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>ABS (LOSE WEIGHT)</h1>
+<div class="container">
+<div class="card"><img src="../Images/plank.jpg"><h2>Plank</h2><p>Core endurance</p></div>
+<div class="card"><img src="../Images/climber.jpg"><h2>Mountain Climbers</h2><p>Cardio + core</p></div>
+</div>
+
+<a href="../loseweight.html" class="back">⬅ Back</a>
+
+</body>
+</html>
