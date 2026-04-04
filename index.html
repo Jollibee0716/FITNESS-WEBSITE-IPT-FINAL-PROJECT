@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">Portfolio</a>
+        <ul>
+            <!-- <li class="active"><a href="#">Home</a></li> -->
+            <li><a href="#">Home</a></li>
+                    <!-- <li><a href="#">About</a></li> -->
+            <li><a href="#project">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="bars-animation">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
+    </div>
+
+    <section class="home">
+        <div class="home-info">
+            <h1>Marl Jade Oñada</h1>
+            <h2>Future 
+                <span style="--i:4;" data-text="Software Engineer">Software Engineer</span>
+                <span style="--i:3;" data-text="Developer">Developer</span>
+                <span style="--i:2;" data-text="IT Professional">IT Professional</span>
+                <span style="--i:1;" data-text="Designer">Designer</span>
+            </h2>
+            <p>Hi! I’m from Mayacabac, Dauis, Bohol. I’m currently a 2nd-year Information Technology student at Holy Name University. I’m passionate about technology, innovation, and continuously improving my skills in IT to build creative and efficient digital solutions.</p>
+            <div class="btn-sci">
+                <a href="#about" class="btn">More About Me</a>
+                <div class="sci">
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="Adobe Express - file.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="project" class="project-section">
+    <h2 class="heading">Latest<span>Project</span></h2>
+
+    <div class="project-container">
+        <div class="project-card">
+            <img src="ChatGPT Image Nov 10, 2025, 07_24_32 PM.png" alt="Project 1">
+
+            <div class="project-hover">
+               <p>This is my first Figma fitness app project. I designed the UI with a focus on clean layout, modern gradients, and an easy-to-use workout tracking interface. It helped me practice visual hierarchy, consistency, and mobile-friendly design.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="Screenshot 2025-11-10 191915.png" alt="Project 2">
+
+            <div class="project-hover">
+                <p>This is my first portfolio project. I built it to showcase my skills, projects, and background using clean UI, responsive layout, and smooth animations. It helped me learn more about HTML, CSS, and Javascript and improving user experience.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="about" id="about">
+    <h2 class="heading">About <span>Me :)</span></h2>
+
+    <div class="about-img">
+        <img src="Adobe Express - file.png" alt="">
+        <span class="circle-spin"></span>
+    </div>
+
+    <div class="about-content">
+        <p>My name is Marl Jade Oñada, a 20-year-old 2nd-year Information Technology student from Holy Name University. I live in Mayacabac, Dauis, Bohol, and I come from a big family with ten siblings. I enjoy exploring different interests—cycling, playing basketball (even if I’m not that good yet), and learning practical skills like basic welding and electrical work. I love coffee, and traveling with my friends and family is one of my favorite ways to relax and experience new places. My favorite colors are green and blue, and I’m passionate about growing in the IT field while discovering more about myself along the way.</p>
+    </div>
+</section>
+
+
+<section class="contact" id="contact">
+  <h2 class="heading">Contact <span>Me!</span></h2>
+
+  <form action="#">
+    <div class="input-box">
+        <div class="input-field">
+            <input type="text" placeholder="Full Name" required>
+        </div>
+    </div>
+
+    <div class="input-box">
+        <div class="input-field">
+            <input type="email" placeholder="Email Address" required>
+        </div>
+    </div>
+
+    <div class="input-box">
+        <div class="input-field">
+            <input type="number" placeholder="Mobile Number" required>
+        </div>
+    </div>
+
+    <div class="textarea-field">
+        <textarea placeholder="Your Message" required></textarea>
+    </div>
+
+    <div class="btn-box">
+        <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+</section>
+
+
+</body>
+</html>
