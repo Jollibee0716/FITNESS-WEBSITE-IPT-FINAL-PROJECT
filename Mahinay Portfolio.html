@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christian Dheir Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: "Poppins", sans-serif; }
+body { background:#ffffff; scroll-behavior: smooth; }
+
+/* NAVBAR */
+.navbar {
+    width:100%; padding:20px 60px; display:flex; justify-content:space-between; align-items:center;
+    position:fixed; background:#fff; z-index:100; border-bottom:1px solid #e5e5e5;
+}
+.logo { font-size:26px; font-weight:700; }
+.nav-links { display:flex; gap:25px; list-style:none; }
+.nav-links a { color:#000; font-weight:500; text-decoration:none; }
+.nav-links a.active { color:#4169e1; border-bottom:2px solid #4169e1; }
+
+/* PARTICLES */
+#particles-js { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
+
+/* HERO / HOME */
+section { padding:150px 60px 80px; }
+.hero { display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; }
+.hero-left { max-width:600px; }
+.hero-left h1 { font-size:48px; color:#1b1b1b; line-height:1.2; }
+.hero-left .highlight { color:#f08d22; }
+.typed-color { color:#991f1f; font-weight:600; }
+.hero-left p { font-size:20px; margin-top:10px; }
+.btn { margin-top:25px; padding:12px 30px; background:#1e0eff; color:white; text-decoration:none; display:inline-block; border-radius:30px; font-weight:600; box-shadow:0 4px 10px rgba(0,0,200,0.3);}
+.social-icons { display:flex; gap:18px; margin-top:30px; }
+.social-icons i { font-size:22px; cursor:pointer; transition:0.3s; }
+.social-icons i:hover { color:#1e0eff; }
+.hero-right { text-align:center; margin-top:20px; }
+.hero-right img { width:200%; max-width:420px; height:auto; object-fit:cover; background:#ffcf33; border-radius:50%; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.15); }
+
+/* PROJECTS */
+#projects { text-align: center; margin-top:50px; }
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+.project-card { width:300px; padding:20px; border:1px solid #ddd; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+.project-card img { width:100%; border-radius:10px; }
+.project-card h3 { margin-top:15px; }
+
+/* CONTACT */
+.contact { margin-top:50px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.contact form {
+    max-width:500px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+.contact input, .contact textarea { padding:10px; border:1px solid #ccc; border-radius:5px; }
+.contact button { padding:12px; background:#1e0eff; color:#fff; border:none; border-radius:5px; cursor:pointer; }
+.contact button:hover { background:#4169e1; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">PORFOLIO</div>
+    <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- PARTICLES -->
+<div id="particles-js"></div>
+
+<!-- HOME SECTION -->
+<section id="home" class="hero">
+    <div class="hero-left">
+        <h1>Hi There,<br> I'm <span>Christian  Dheir  <span class="highlight">Mahinay</span></span></h1>
+        <p>a passionate<span class="typed-color"> Web Development </span>who loves creating modern, responsive, and user-friendly websites.
+         I specialize in building dynamic web applications with clean, efficient code and a focus on seamless user experiences.</p>
+        <a class="btn" href="#contact">Contact Me</a>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-telegram"></i>
+        </div>
+    </div>
+    <div class="hero-right">
+        <img src="c:\Users\7BLab\Downloads\b90710fc-c797-4a9e-971c-75d2def6e2e3.jpg" alt="avatar">
+    </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <!-- Project 1: Personal Portfolio Website -->
+        <div class="project-card">
+            <h3>Personal Portfolio Website</h3>
+            <p>A responsive and interactive portfolio website to showcase my skills, projects, and contact information.</p>
+        </div>
+
+        <!-- Project 2: Task Management App -->
+        <div class="project-card">
+            <h3>Task Management App</h3>
+            <p>A to-do application allowing users to add, edit, delete, and mark tasks as complete, with local storage support.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- PARTICLES JS CONFIG -->
+<script>
+particlesJS("particles-js", {
+    "particles": {
+        "number": { "value": 80 },
+        "size": { "value": 3 },
+        "color": { "value": "#000000" },
+        "line_linked": {
+            "enable": true,
+            "color": "#999",
+            "distance": 150
+        },
+        "move": { "speed": 2 }
+    }
+});
+</script>
+
+</body>
+</html>
