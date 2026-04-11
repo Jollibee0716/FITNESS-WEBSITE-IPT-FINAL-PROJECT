@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="webpage.css">
+</head>
+
+<body>
+  <!-- Overlay for sidebar menu -->
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+  <!-- Hamburger Icon -->
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <!-- Sidebar Menu -->
+  <ul id="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#developers">Developers</a></li>
+    <li><a href="#contact">Contact</a></li>
+    
+  </ul>
+
+  <!-- Sections -->
+  <section id="home">
+    <div class="homepage-container">
+      <div class="top-part">FIT</div>
+      <div class="bottom-part">NESS</div>
+      <div class="background-transition"></div>
+      <button class="my-button" onclick="goToLogin()">Join Now</button>
+    </div>
+  </section>
+
+  <section id="about">
+  <div class="content-wrapper">
+    <h1>About Our Team</h1>
+    
+    <h2>Who We Are</h2>
+    <p>
+      We are a team of passionate <strong>Information Technology students</strong> who believe 
+      that the power of code can be used to transform lives. While our days are spent 
+      navigating complex algorithms, our goal is to build digital solutions that 
+      improve physical health.
+    </p>
+
+    <h2>Why This Website?</h2>
+    <p>
+      As IT students, we know the "Developer Lifestyle" often leads to long hours at a desk. 
+      We developed this fitness website to bridge the gap between technology and health, 
+      providing a tool that helps people like us stay active while pursuing their 
+      professional goals.
+    </p>
+
+    <h2>Our Vision</h2>
+    <p>
+      As IT students, we know the "Developer Lifestyle" often leads to long hours at a desk. 
+      We developed this fitness website to bridge the gap between technology and health, 
+      providing a tool that helps people like us stay active while pursuing their 
+      professional goals.
+    </p>
+  </div>
+</section>
+  <section id="developers" class="section">
+    <div class="developer-gallery-staggered">
+
+  <a href="franky.html" class="img-upper-left"><img src="Images/franky.jpg" alt="dev1"> <span class="caption">Junior Developer</span></a>
+  <a href="domskie.html" class="img-bottom-left"><img src="Images/dominic.jpg" alt="dev2"> <span class="caption">Designer/Junior Developer</span></a>
+  <a href="workout3.html" class="img-center"><img src="Images/denjie.jpg" alt="dev3"> <span class="caption">Senior Developer</span></a>
+  <a href="jade.html" class="img-upper-right"><img src="Images/Jade.jpg" alt="dev4"> <span class="caption">Junior Developer</span></a>
+  <a href="MAHINAY PORTFOLIO.html" class="img-bottom-right"><img src="Images/yandee.jpg" alt="dev5"> <span class="caption">Junior Developer</span></a>
+
+</div>
+  </section>
+
+  <section id="contact">
+  <div class="content-wrapper">
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      
+      <input type="hidden" name="access_key" value="2dbd1c8a-1426-4a52-acd6-b34af8678ff7">
+
+      <h3>Quick Contact</h3>
+      <h4>Contact us today, and get a reply within 24 hours!</h4>
+      
+      <fieldset>
+        <input name="name" placeholder="Your name" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      
+      <fieldset>
+        <input name="email" placeholder="Your Email Address" type="email" tabindex="2" required>
+      </fieldset>
+      
+      <fieldset>
+        <input name="phone" placeholder="Your Phone Number" type="tel" tabindex="3" required>
+      </fieldset>
+      
+      <fieldset>
+        <textarea name="message" placeholder="Type your Message Here...." tabindex="5" required></textarea>
+      </fieldset>
+      
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit">Submit</button>
+      </fieldset>
+
+      <input type="checkbox" name="botcheck" style="display: none;">
+    </form>
+  </div>
+</section>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      const overlay = document.getElementById("overlay");
+      const body = document.body;
+
+      menu.classList.toggle("show");
+      overlay.classList.toggle("show");
+      body.classList.toggle("menu-open");
+    }
+
+    document.querySelectorAll("#menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("menu").classList.remove("show");
+        document.getElementById("overlay").classList.remove("show");
+        document.body.classList.remove("menu-open");
+      });
+    });
+
+    function goToLogin() {
+      window.location.href = "login.html";
+
+    }
+      
+  window.onload = function() {
+    window.scrollTo(0, 0);
+  };
+
+  </script>
+</body>
+</html>

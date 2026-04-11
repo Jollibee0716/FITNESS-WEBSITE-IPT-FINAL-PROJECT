@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log in Page</title>
+  
+ <style media="screen">
+      *,
+
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background: url("Images/web3.jpg") center/cover no-repeat fixed;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+form {
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    top: 50%;
+    left: 25%; /* Start from left edge */
+    transform: translateY(-50%);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+
+    /* Animation */
+    animation: slideIn 1s ease forwards;
+}
+
+/* Keyframes for sliding in */
+@keyframes slideIn {
+    from {
+        transform: translate(-100%, -50%); /* hidden off-screen left */
+        opacity: 0;
+    }
+    to {
+        transform: translate(50%, -50%); /* centered */
+        opacity: 1;
+    }
+}
+
+form *{
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+    font-weight: 500px;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500px;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500px;
+}
+::placeholder{
+    color: white;
+}
+button {
+  margin-top: 50px;
+  width: 100%;
+  background-color: orange;
+  color: white;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkorange;
+}
+.social {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px; 
+}
+
+.social div {
+  width: 150px;
+  height: 40px; 
+  border-radius: 3px;
+  color: #eaf0fb;
+  line-height: 40px; 
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  
+}
+
+.social div:hover {
+  background-color: rgba(255,255,255,0.47);
+}
+
+.social .fb {
+  background-image: url("Images/facebook.png");
+  background-position:center;   
+}
+
+.social .go {
+  background-image: url("Images/google.png");
+  background-position:right;  
+
+}
+.social .in {
+  background-image: url("Images/instagram.png");
+}
+  .back-btn {
+  position: fixed;
+  margin-top: 20px;
+  left: 20px;
+  background: rgb(191, 109, 10);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s;
+  width: auto;
+}
+
+.back-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+</style>
+</head>
+<body>
+  <button class="back-btn" onclick="goHome()">Back</button>
+  <form onsubmit="return false;"> <!-- prevent form from submitting -->
+    <h3>Login Here</h3>
+
+    <label for="username">Username</label>
+    <input type="text" placeholder="Email or Phone" id="username">
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password" id="password">
+    <span onclick="togglePassword()" style="cursor:pointer;">👁️</span>
+
+    <!-- Fixed button -->
+    <button class="login-button" onclick="goToMainpage()">Log In</button>
+
+    <div class="social">
+      <div class="go"><i class="fab fa-google"></i></div>
+      <div class="fb"><i class="fab fa-facebook"></i></div>
+      <div class="in"><i class="fab fa-instagram"></i></div>
+      <a href="signup.html" class="create-account-link">Create Account</a>
+    </div>
+  </form>
+</body>
+
+<script>
+function togglePassword() {
+  const passwordField = document.getElementById("password");
+  passwordField.type = passwordField.type === "password" ? "text" : "password";
+}
+
+// Redirect to main page when Log In is clicked
+function goToMainpage() {
+  window.location.href = 'mainpage.html'; 
+}
+function goHome() {
+  window.location.href = "homepage.html";
+}
+</script>
+  

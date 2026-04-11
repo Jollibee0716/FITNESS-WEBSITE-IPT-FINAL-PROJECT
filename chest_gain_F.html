@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProWorkout | Fitness Gallery</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+        }
+
+       body {
+         margin: 0;
+         padding: 60px 20px; 
+    
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop") center/cover no-repeat fixed; 
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden; 
+}
+
+        /* --- Header / Title Style --- */
+        .header-section {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .header-section h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem); /* Responsive font size */
+            color: #fff;
+            margin: 0;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            font-weight: 200;
+        }
+
+        .header-section h1 span {
+            font-weight: 700;
+            color: orange;
+            text-shadow: 0 0 30px rgba(255, 165, 0, 0.3);
+        }
+
+        .header-section p {
+            color: #555;
+            letter-spacing: 4px;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        /* --- Gallery Layout --- */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .img-box {
+            background: orange;
+            padding: 8px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s;
+            cursor: pointer;
+        }
+
+        .img-box img {
+            width: 180px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            transition: 0.5s ease;
+        }
+
+        /* --- Caption Style --- */
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10px 10px 10px;
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            text-align: center;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent);
+            opacity: 0;
+            transform: translateY(100%);
+            transition: 0.4s ease-out;
+        }
+
+        /* --- Interaction Effects --- */
+        
+        /* 1. Scale the hovered item */
+        .img-box:hover {
+            transform: scale(1.5);
+            z-index: 100;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+
+        /* 2. Show caption on hover */
+        .img-box:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3. Darken other items when one is hovered */
+        .gallery:hover .img-box:not(:hover) {
+            opacity: 0.3;
+            filter: grayscale(0.8);
+        }
+
+        /* Subtle glow animation for the "Orange" box */
+        .img-box:hover {
+            outline: 2px solid rgba(255, 165, 0, 0.5);
+        }
+        .back-btn-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .back-btn-link img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .back-btn-link:hover {
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+    <a href="loseweight_M.html" class="back-btn-link">
+  <img src="Images/balik.png" alt="Back">
+</a>
+
+    <header class="header-section">
+        <h1>CHEST-<span>WORKOUT</span></h1>
+       
+    </header>
+
+    <div class="gallery">
+
+        <div class="img-box">
+            <img src="Images/pic1.jpg">
+            <div class="caption">Push Day</div>
+        </div>
+
+        <div class="img-box">
+            <img src="Images/pic2.jpg">
+            <div class="caption">Leg Strength</div>
+        </div>
+
+        <div class="img-box">
+            <img src="Images/pic3.jpg">
+            <div class="caption">Core Stability</div>
+        </div>
+
+        <div class="img-box">
+            <img src="Images/pic4.jpg">
+            <div class="caption">Cardio Burn</div>
+        </div>
+
+        <div class="img-box">
+            <img src="Images/pic5.jpg">
+            <div class="caption">Heavy Pull</div>
+        </div>
+
+        <div class="img-box">
+            <img src="Images/pic6.jpg">
+            <div class="caption">Mobility Flow</div>
+        </div>
+
+        <div class="img-box">
+            <img src="Images/pic7.jpg">
+            <div class="caption">Power Clean</div>
+        </div>
+
+        <div class="img-box">
+            <img src="Images/pic8.jpg">
+            <div class="caption">Endurance</div>
+        </div>
+
+         <div class="img-box">
+            <img src="Images/pic1.jpg">
+            <div class="caption">Push Day</div>
+        </div>
+
+         <div class="img-box">
+            <img src="Images/pic1.jpg">
+            <div class="caption">Push Day</div>
+        </div>
+
+         <div class="img-box">
+            <img src="Images/pic1.jpg">
+            <div class="caption">Push Day</div>
+        </div>
+
+         <div class="img-box">
+            <img src="Images/pic1.jpg">
+            <div class="caption">Push Day</div>
+        </div>
+
+
+</body>
+</html>

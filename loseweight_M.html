@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lose_weight</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      padding: 0;
+      height: 100%;
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)), 
+                  url('Images/web3.jpg') center/cover no-repeat fixed;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section-caption {
+      margin-bottom: 60px;
+      color: white;
+      font-size: 40px;
+      background: rgba(0,0,0,0.4);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    /* MENU */
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .menu button {
+      background: rgb(191, 109, 10);
+      border: none;
+      padding: 20px;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    .menu button:hover {
+      background: #ff9500;
+    }
+
+    /* BODY DIAGRAM */
+    .body {
+      position: relative;
+      width: 250px;
+    }
+
+    .body img#bodyImage {
+      width: 100%;
+      display: block;
+    }
+
+    .highlight {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none; /* ensures hover still triggers on buttons */
+    }
+
+    .highlight.active {
+      opacity: 1;
+    }
+
+    /* BACK BUTTON */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .back-btn img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+
+    .back-btn img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+<section id="section5">
+  <a href="mainpage.html#section2" class="back-btn">
+  <img src="Images/balik.png" alt="Back">
+</a>
+
+  <div class="section-caption">Select your Target Muscle</div>
+  
+  <div class="content">
+    <div class="menu">
+      <button data-target="fullbody" onclick="goToWorkout('fullbody.html')">Full body</button>
+      <button data-target="chest" onclick="goToWorkout('chest.html')">Chest</button>
+      <button data-target="abs" onclick="goToWorkout('abs.html')">Abs</button>
+      <button data-target="bicep" onclick="goToWorkout('bicep.html')">Bicep</button>
+      <button data-target="tricep" onclick="goToWorkout('tricep.html')">Tricep</button>
+      <button data-target="shoulders" onclick="goToWorkout('shoulders.html')">Shoulders</button>
+      <button data-target="back" onclick="goToWorkout('backandtraps.html')">Back and Traps</button>
+      <button data-target="butt" onclick="goToWorkout('butt.html')">Butt</button>
+      <button data-target="legs" onclick="goToWorkout('legs.html')">Legs</button>
+    </div>
+
+    <div class="body">
+      <img src="Images/body.png" alt="Body Map" id="bodyImage">
+      <img src="Images/fullbody.png" class="highlight fullbody">
+      <img src="Images/chest.png" class="highlight chest">
+      <img src="Images/abs.png" class="highlight abs">
+      <img src="Images/bicep.png" class="highlight bicep">
+      <img src="Images/tricep.png" class="highlight tricep">
+      <img src="Images/shoulders.png" class="highlight shoulders">
+      <img src="Images/back.png" class="highlight back">
+      <img src="Images/butt.png" class="highlight butt">
+      <img src="Images/legs.png" class="highlight legs">
+    </div>
+  </div>
+</section>
+
+<script>
+  function goToWorkout(url) {
+    window.location.href = url;
+  }
+
+  // Muscle hover highlights
+  const buttons = document.querySelectorAll(".menu button");
+  buttons.forEach(btn => {
+    const targetClass = btn.getAttribute("data-target");
+    const highlightImg = document.querySelector(`.highlight.${targetClass}`);
+    
+    if (highlightImg) {
+      btn.addEventListener("mouseenter", () => highlightImg.classList.add("active"));
+      btn.addEventListener("mouseleave", () => highlightImg.classList.remove("active"));
+    }
+  });
+</script>
+
+</body>
+</html>

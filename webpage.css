@@ -1,0 +1,411 @@
+html {
+  scroll-behavior: smooth; /* smooth scrolling when clicking menu links */
+}
+body {
+  margin: 0;
+ 
+  min-height: 100vh;
+  
+  
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)), 
+              url('Images/web3.jpg');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps the background in place while you scroll */
+  
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+}
+
+/*For second image background transition */
+
+.background-transition {
+  position: absolute;
+  bottom: -100%; 
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  width: 450px;
+  height: 500px;
+  background: url("Images/web4.png") no-repeat center/contain;
+  animation: popUp 2s ease-out forwards;
+}
+
+@keyframes popUp {
+  0% {
+    bottom: -100%;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+  100% {
+    bottom: 20%; 
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.top-part {
+      font-size: 80px;
+      font-weight: bold;
+      margin-top: 200px;
+      color: orange;
+      text-align: center;
+      top: 10px;     
+      right: 55%;
+      transform: translateX(-50%);
+      position: absolute;
+ }
+  .bottom-part {
+  position: absolute;
+  bottom: 200px;   
+  left: 55%;      
+  transform: translateX(-50%);
+  font-size: 80px;
+  font-weight: bold;
+  color: orange;
+}
+  .my-button {
+  background-color: orange;
+  color: white;
+  font-size: 20px;
+  font-weight: 700px;
+  padding: 16px;
+  border: 2px solid black;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;   
+  bottom: 100px;         
+  transform: translateX(-50%); 
+  left: 45%;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.my-button:hover {
+  background-color: darkorange;
+}
+
+/*Transition for the text and the button*/
+
+.top-part, .bottom-part, .my-button {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeSlideUp 1.5s ease-out forwards;
+}
+
+
+.top-part {
+  animation-delay: 0.5s;
+}
+
+.bottom-part {
+  animation-delay: 1s;
+}
+
+.my-button {
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Hamburger icon */
+:root {
+  --primary-color: #ffcc00; /* Neon Lime */
+  --bg-dark: #121212;      /* Deep Carbon */
+  --nav-bg: #1a1a1a;       /* Lighter Carbon */
+  --text-main: #ffffff;
+  --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Modern Hamburger with a border-bottom accent */
+.menu-icon {
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 12px 20px;
+  background: var(--bg-dark);
+  color: var(--primary-color);
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  border: 1px solid rgba(215, 255, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Sidebar: Angled design for a "fast" feel */
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px; /* Slightly wider for impact */
+  height: 100%;
+  background-color: var(--nav-bg);
+  list-style: none;
+  padding: 100px 0 40px 0;
+  margin: 0;
+  transform: translateX(-100%);
+  transition: transform var(--transition);
+  z-index: 1002;
+  border-right: 3px solid var(--primary-color);
+}
+
+#menu.show {
+  transform: translateX(0);
+}
+
+/* High-impact Nav Links */
+#menu li a {
+  display: block;
+  color: var(--text-main);
+  padding: 18px 40px;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: italic; /* "Speed" look */
+  transition: var(--transition);
+  position: relative;
+}
+
+#menu li a:hover {
+  color: var(--primary-color);
+  padding-left: 50px; /* Slide-in effect on hover */
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Blurred Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+  z-index: 1000;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Locking scroll when training/browsing menu */
+body.menu-open {
+  overflow: hidden;
+}
+section {
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-margin-top: 60px; /* avoids menu overlap */
+}
+/* Container for the contact form */
+:root {
+  --accent: #ff9900;
+  --accent-hover: #e68a00;
+  --field-bg: #f8f9fa;
+  --border-radius: 12px;
+}
+
+#contact form {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  /* Soft, multi-layered depth */
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.1), 
+    0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 30%;
+}
+
+/* Better Typography */
+#contact h3 {
+  color: #1a1a1a;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+#contact h4 {
+  color: #6c757d;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+/* Modern Input Styling */
+#contact input, 
+#contact textarea {
+  background: var(--field-bg);
+  border: 2px solid transparent; /* Prevents layout jump on focus */
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border-radius: var(--border-radius);
+  color: #333;
+  transition: all 0.25s ease;
+}
+
+/* Subtle Focus Glow */
+#contact input:focus, 
+#contact textarea:focus {
+  background: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255, 153, 0, 0.15);
+  outline: none;
+}
+
+/* The "Premium" Submit Button */
+#contact button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 16px;
+  border-radius: var(--border-radius);
+  transition: transform 0.2s, background 0.3s;
+  left: 30%;
+}
+
+#contact button[type="submit"]:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 153, 0, 0.3);
+}
+
+#contact button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+#about .content-wrapper {
+  background-color: #ffffff; 
+  color: #000000;            
+  max-width: 850px;          
+  margin: 40px auto;         
+  padding: 50px;             
+  border-radius: 12px;       
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4); 
+}
+
+
+#about .content-wrapper p, 
+#about .content-wrapper h2,
+#about .content-wrapper h1 {
+  color: #000000 !important;
+}
+
+
+.content-wrapper h2 {
+  text-transform: uppercase;
+  border-left: 5px solid darkorange; 
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+.content-wrapper h1 {
+  text-transform: uppercase;
+  border-left: 5px solid darkorange; 
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+
+#developers .content-wrapper,
+#contact .content-wrapper {
+  background-color: transparent;
+  color: #ffffff; 
+}
+
+#developers p, #contact p {
+  color: #ffffff;
+}
+.developer-gallery-staggered {
+  position: relative;
+  width: 1000px;
+  height: 700px; /* Increased height slightly to give captions breathing room */
+  margin: 0 auto 5% auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.01);
+  border-radius: 15px;
+  overflow: visible; /* Changed from hidden so captions aren't cut off */
+}
+
+/* Common styling for the link wrappers */
+.developer-gallery-staggered a {
+  display: block;
+  position: absolute;
+  width: 250px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+/* Image styling - Now handles the borders and overflow */
+.developer-gallery-staggered img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #033f4b;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: block;
+  transition: transform 0.4s ease, filter 0.3s, border-color 0.3s;
+}
+
+/* Enhanced Caption - Now sits below the image */
+.caption {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  color: white; /* Matching your hover color for brand consistency */
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(-10px); /* Starts slightly tucked behind image */
+  transition: all 0.4s ease;
+}
+
+/* Hover Effects */
+.developer-gallery-staggered a:hover {
+  z-index: 10; /* Ensures the hovered item stays on top */
+}
+
+.developer-gallery-staggered a:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  border-color: rgb(197, 113, 10);
+}
+
+.developer-gallery-staggered a:hover .caption {
+  opacity: 1;
+  transform: translateY(0); /* Slides down into view */
+}
+
+/* Staggered Positions (Heights adjusted for captions) */
+.img-upper-left  { top: 0; left: 0; }
+.img-bottom-left { bottom: 40px; left: 0; } /* Added 40px to prevent text clipping */
+.img-upper-right { top: 0; right: 0; }
+.img-bottom-right { bottom: 40px; right: 0; }
+.img-center      { top: 50%; left: 50%; transform: translate(-50%, -50%); }
